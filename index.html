@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Fire Solo Tournament</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fc466b, #3f5efb);
+      color: #333;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 60px auto;
+      background: #ffffffee;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #3f5efb;
+      margin-bottom: 20px;
+    }
+
+    .payment-info {
+      background: #ffe4b3;
+      padding: 15px;
+      border-left: 5px solid #ffa502;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .payment-info p {
+      margin: 5px 0;
+      font-weight: 500;
+    }
+
+    label {
+      margin-top: 12px;
+      font-weight: 600;
+      display: block;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 2px solid #3f5efb55;
+      border-radius: 12px;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #3f5efb;
+      outline: none;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      background: linear-gradient(to right, #3f5efb, #fc466b);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .confirmation {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #d1ffd6;
+      color: #155724;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🎮 Solo Free Fire Tournament</h2>
+
+    <div class="payment-info">
+      <p>💸 Entry Fee: <strong>₹50</strong></p>
+      <p>Pay UPI to: <strong>unknown0098@ybl</strong></p>
+      <p>Accepts: GPay / PhonePe / Paytm</p>
+    </div>
+
+    <form id="form">
+      <label for="name">Player Name</label>
+      <input type="text" id="name" required>
+
+      <label for="uid">Free Fire UID</label>
+      <input type="text" id="uid" required>
+
+      <label for="mobile">Mobile Number</label>
+      <input type="text" id="mobile" required>
+
+      <label for="email">Email ID</label>
+      <input type="email" id="email" required>
+
+      <label for="screenshot">Payment Screenshot</label>
+      <input type="file" id="screenshot" accept="image/*" required>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+
+    <div class="confirmation" id="confirmation">
+      ✅ Registration Complete!<br>We’ll contact you soon.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("form");
+    const confirmation = document.getElementById("confirmation");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      form.style.display = "none";
+      confirmation.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
